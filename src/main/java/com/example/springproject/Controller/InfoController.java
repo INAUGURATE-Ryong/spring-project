@@ -3,20 +3,23 @@ package com.example.springproject.Controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-public class InfoController implements Controller {
-    @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//public class InfoController implements Controller {
+@Controller
+public class InfoController {
 
-        String phone = "010-2315-2131";
-        ModelAndView mav = new ModelAndView();
+//    public ModelAndView info(ModelAndView mav){
+    @RequestMapping("/info")  // 인포라고 쳐서 들어오면 info서블릿으로 들어옴
+        public String info(Model model){
+            model.addAttribute("name","yuna");
+            model.addAttribute("tel","0000");
 
-        mav.addObject("name","yuna"); //data save
-        mav.addObject("phone",phone);
-        mav.setViewName("/WEB-INF/views/info.jsp");
+            return "info";
 
-        return mav;
     }
+
 }
