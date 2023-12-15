@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--memberCtx.xml-->
+    <bean id="vo" class="day02.DI2.MemberDTO" c:age="33" c:message="옵션이용" c:name="박태"/>
+
+    <bean class="day02.DI2.MemberDAO" id="dao" p:dto-ref="vo">
+
+
+        <!--        <constructor-arg ref="vo"/>-->
+        <property name="dto" ref="vo"/>
+    </bean>
+
+
+
+<!--<bean id="vo" class="day02.DI2.MemberDTO">-->
+<!--    <constructor-arg value="uuu"/>-->
+<!--    <constructor-arg value="22"/>-->
+<!--    <constructor-arg value="hello"/>-->
+<!--</bean>-->
+<!--    <bean class="day02.DI2.MemberDAO" id="dao">-->
+<!--&lt;!&ndash;        <constructor-arg ref="vo"/>&ndash;&gt;-->
+<!--        <property name="dto" ref="vo"/>-->
+<!--    </bean>-->
+</beans>
