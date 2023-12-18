@@ -19,7 +19,8 @@
 <!--        <constructor-arg value="77"/>-->
     </bean>
 
-    <bean id="view" class="day02.DI1.IRcordViewImpl">
+    <bean id="view" name="v,v2,abc" class="day02.DI1.IRcordViewImpl">
+<!--        name은 별칭이라 생각하면 됨.-->
         <property name="record" ref="record"/>
     </bean>
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--playerCtx.xml-->
+<!--    name은 별칭!-->
+    <bean id="player" class="day03.DI3.PlayerImpl" name="p1,p2" scope="prototype"/>  <!-- scope 를 안쓰면 싱글톤,설정해주면 prototype으로도 쓸수 있음 -->
+    <bean id="player2" class="day03.DI3.PlayerImpl"/>
+<!--    id를 다르게 설정하고 싱글톤으로 했어도 완전히 다른 객체라 메모리를 따로 씀 (주소가 다름)-->
+<!--prototype는 메모리를 따로 잡겠단 뜻(주소가 다름). 싱글톤은 같은 메모리(주소가 같음) -->
+
+<!--    3번 스타일-->
+    <context:annotation-config/>  <!-- annotation 기반으로 하겠다 라고 선언 -->
+    <bean id="soccer" class="day03.DI3.Soccer" />
+    <bean id="curling" class="day03.DI3.Curling" />
+    <bean id="basketball" class="day03.DI3.Basketball" />
+
+<!--    2번스타일 (namespace의 속성을 가지고 제어, 세터는 p, 생성자는 c
+    <bean id="soccer" class="day03.DI3.Soccer" p:player-ref="player"/>
+    <bean id="curling" class="day03.DI3.Curling" p:player-ref="player"/>
+    <bean id="basketball" class="day03.DI3.Basketball" p:player-ref="player"/>
+    -->
+
+<!--    1번스타일 (엘리먼트로 제어 setter method는 property로 작업, 생성자는 constrouctor-arg로 제어
+    <bean id="soccer" class="day03.DI3.Soccer">
+        <property name="player" ref="player"/>
+    </bean>
+    <bean id="curling" class="day03.DI3.Curling">
+        <property name="player" ref="player"/>
+    </bean>
+
+    <bean id="basketball" class="day03.DI3.Basketball">
+        <property name="player" ref="player"/>
+    </bean>
+    -->
+
+
+</beans>

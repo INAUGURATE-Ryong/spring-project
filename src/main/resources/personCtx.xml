@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    personCtx.xml-->
+
+    <bean id="employee" class="day03.DI4.EmployeePersonImpl">
+        <constructor-arg name="name" value="김연아" />
+        <constructor-arg name="gender" value="여자" />
+        <constructor-arg name="age" value="28" />
+        <constructor-arg>
+            <list>
+                <value>독서</value>
+                <value>영화감상</value>
+                <value>게임</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="student" class="day03.DI4.StudentPersonImpl">
+        <property name="name" value="이무기" />
+        <property name="gender" value="여자" />
+        <property name="age" value="22" />
+        <property name="score">
+            <list>
+                <value>100</value>
+                <value>88</value>
+                <value>20</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="info" class="day03.DI4.MyInfomation" p:person-ref="student"/>
+    <bean id="info2" class="day03.DI4.MyInfomation" p:person-ref="employee"/>
+
+</beans>
