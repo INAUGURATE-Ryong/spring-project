@@ -1,4 +1,4 @@
-package day04.AOP4;
+package day04.AOP4_xml;
 
 public class BookBeanImpl implements IBookBean{
     @Override

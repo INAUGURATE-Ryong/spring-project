@@ -10,12 +10,14 @@
     5.after(finally)
     6.around (대상 메소드 수행 후)
 -->
-    <bean class="day04.AOP5.CalcImpl" id="calc"/>
-    <bean class="day04.AOP5.LogPrintBeforeAdvice" id="logPrintBeforeAdvice"/>
-    <bean class="day04.AOP5.LogPrintAfterAdvice" id="logPrintAfterAdvice"/>
+    <bean class="day04.AOP5_xml.CalcImpl" id="calc"/>
+    <bean class="day04.AOP5_xml.LogPrintBeforeAdvice" id="logPrintBeforeAdvice"/>
+    <bean class="day04.AOP5_xml.LogPrintAfterAdvice" id="logPrintAfterAdvice"/>
+    <bean class="day04.AOP5_xml.LogPrintAroundAdvice" id="logPrintAroundAdvice"/>
+    <bean class="day04.AOP5_xml.LogPrintThrowsAdvice" id="logPrintThrowsAdvice"/>
     <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="proxy">
         <property name="proxyInterfaces">
-            <list><value>day04.AOP5.ICalc</value></list>   <!-- 인터페이스-->
+            <list><value>day04.AOP5_xml.ICalc</value></list>   <!-- 인터페이스-->
         </property>
 
         <property name="target" ref="calc"/>
@@ -23,7 +25,7 @@
             <list>
 <!--                여러개의 보조 관심사 적용 가능하며 동시에 적용이 가능-->
 <!--                 <value>logPrintBeforeAdvice</value>  &lt;!&ndash; 핸들러 ID값 &ndash;&gt;-->
-                <value>logPrintAfterAdvice</value>
+                <value>logPrintThrowsAdvice</value>
             </list>
         </property>
     </bean>

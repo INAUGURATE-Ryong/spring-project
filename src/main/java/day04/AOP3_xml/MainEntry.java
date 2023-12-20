@@ -1,4 +1,4 @@
-package day04.AOP3;
+package day04.AOP3_xml;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -1,4 +1,4 @@
-package day04.AOP3;
+package day04.AOP3_xml;
 
 public interface InterCalc {
     int add(int x , int y);

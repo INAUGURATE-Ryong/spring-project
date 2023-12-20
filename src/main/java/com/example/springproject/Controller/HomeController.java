@@ -36,6 +36,6 @@ public class HomeController {
         model.addAttribute("age",22);
         model.addAttribute("tel","1111");
 
-        return "main";
+        return "jsp/main";
     }
 }

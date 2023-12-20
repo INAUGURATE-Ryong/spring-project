@@ -1,4 +1,4 @@
-package day04.AOP3;
+package day04.AOP3_xml;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

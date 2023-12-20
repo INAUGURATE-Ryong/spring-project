@@ -3,13 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!--AOPappCtx.xml-->
-    <bean class="day04.AOP3.CalcImpl" id="c"/>
-    <bean class="day04.AOP3.LogPrintHandlerImpl" id="logPrintHandler"/>
+    <bean class="day04.AOP3_xml.CalcImpl" id="c"/>
+    <bean class="day04.AOP3_xml.LogPrintHandlerImpl" id="logPrintHandler"/>
 
     <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="proxy">
         <property name="proxyInterfaces">
             <list>
-                <value>day04.AOP3.InterCalc</value>  <!--인터페이스-->
+                <value>day04.AOP3_xml.InterCalc</value>  <!--인터페이스-->
             </list>
         </property>
         <property name="target" ref="c"/>

@@ -1,4 +1,4 @@
-package day04.AOP5;
+package day04.AOP5_xml;
 
 public interface ICalc {
     int add(int x , int y);

@@ -6,20 +6,20 @@
 <!--AOPCtx.xml-->
 
 <!--user class object create-->
-    <bean class="day04.AOP4.BookBeanImpl" id="bookBeanImpl"/>
-    <bean class="day04.AOP4.MessageBeanImpl" id="messageBeanImpl"/>
-    <bean class="day04.AOP4.LoggingAdvice" id="advice"/>
+    <bean class="day04.AOP4_xml.BookBeanImpl" id="bookBeanImpl"/>
+    <bean class="day04.AOP4_xml.MessageBeanImpl" id="messageBeanImpl"/>
+    <bean class="day04.AOP4_xml.LoggingAdvice" id="advice"/>
 
 <!--aop설정-->
     <aop:config>
         <aop:aspect id="aspect" ref="advice">
-            <aop:pointcut id="pointCut" expression="execution(public void day04.AOP4.*.*Hello(..))"/>
-<!--            <aop:pointcut id="pointCut" expression="execution(public int day04.AOP4.*.*Hello(..))"/> int 반환 함수만 나옴-->
-<!--            <aop:pointcut id="pointCut" expression="execution(public void day04.AOP4.*.*Hello())"/> 매게변수 없는 애만 나옴-->
+            <aop:pointcut id="pointCut" expression="execution(public void day04.AOP4_xml.*.*Hello(..))"/>
+<!--            <aop:pointcut id="pointCut" expression="execution(public int day04.AOP4_xml.*.*Hello(..))"/> int 반환 함수만 나옴-->
+<!--            <aop:pointcut id="pointCut" expression="execution(public void day04.AOP4_xml.*.*Hello())"/> 매게변수 없는 애만 나옴-->
             <!--
             execution: 메소드 실행 시점을 지정하는 키워드.
             public void: 메소드의 접근 제어자 및 반환 타입을 나타냅니다.
-            day04.AOP4: 패키지명.
+            day04.AOP4_xml: 패키지명.
             *.*Hello: 메소드 이름이 "Hello"로 끝나는 모든 메소드를 나타냅니다.
             (..): 메소드의 매개변수가 어떤 형태든 상관없이 받아들인다는 것을 나타냅니다.
             -->

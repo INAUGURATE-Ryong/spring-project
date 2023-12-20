@@ -1,4 +1,4 @@
-package day04.AOP3;
+package day04.AOP3_xml;
 
 public class CalcImpl implements InterCalc {
     @Override

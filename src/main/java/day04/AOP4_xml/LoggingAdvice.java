@@ -1,4 +1,4 @@
-package day04.AOP4;
+package day04.AOP4_xml;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.util.StopWatch;
